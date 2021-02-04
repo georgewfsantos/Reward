@@ -1,7 +1,15 @@
 import React from "react";
+import RewardScreen from "./components/RewardScreen";
+
+import GlobalStyle from "../src/styles/global";
 
 const App: React.FC = () => {
-  return <h1>REWARD</h1>;
+  return (
+    <>
+      <RewardScreen />
+      <GlobalStyle />
+    </>
+  );
 };
 
 export default App;
