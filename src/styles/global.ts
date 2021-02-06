@@ -1,4 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import "react-toastify/dist/ReactToastify.css";
+
+import { colors } from "./colorVariables";
 
 export default createGlobalStyle`
   *  {
@@ -20,4 +23,11 @@ export default createGlobalStyle`
     button {
       cursor: pointer;
     }
+
+    div.Toastify__toast.Toastify__toast--error{
+    background : ${colors.secondary};
+  }
+  div.Toastify__toast.Toastify__toast--success{
+    background : ${colors.primary};
+  }
 `;

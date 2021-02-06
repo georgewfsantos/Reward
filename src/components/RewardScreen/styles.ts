@@ -1,19 +1,23 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface ContentProps {
+  displayReward: boolean;
+}
+
+export const Container = styled.div<ContentProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #121214;
   height: 100vh;
+  width: 100%;
 
   .content {
-    display: flex;
+    display: ${(props) => (props.displayReward ? "flex" : "none")};
     flex-direction: column;
     justify-content: space-between;
     width: 500px;
-    height: 320px;
+    min-height: 330px;
     max-height: 450px;
     font-weight: 300;
     background-color: #fff;
@@ -21,12 +25,15 @@ export const Container = styled.div`
     border-radius: 15px;
     padding: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
 
     .avatar {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin-top: -40px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .reward-info {
@@ -52,6 +59,14 @@ export const Container = styled.div`
       p:last-child {
         margin-top: 5px;
       }
+    }
+
+    svg {
+      position: absolute;
+      cursor: pointer;
+
+      top: 2%;
+      right: 1%;
     }
 
     form {

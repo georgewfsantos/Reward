@@ -8,7 +8,7 @@ export const ContentWrapper = styled.div`
   color: #000000de;
   font-weight: 700;
   background-color: #fff;
-  width: 500px;
+  width: 800px;
   height: 500px;
   border-radius: 7px;
   margin: auto;
@@ -17,20 +17,31 @@ export const ContentWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  > h1 {
-    border: 2px solid #3f51b5;
-    border-radius: 7px;
-    padding: 10px;
-  }
 
-  > h2 {
-    font-weight: 700;
-  }
+  .reward-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 340px;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
 
-  .reward-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    > h1 {
+      border-radius: 7px;
+      padding: 10px;
+    }
+
+    > h2 {
+      font-weight: 700;
+    }
+
+    .reward-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
   }
 
   .reward-buttons {

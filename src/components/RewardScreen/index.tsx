@@ -1,19 +1,27 @@
 import React, { FormEvent, useCallback, useState } from "react";
 import { Container } from "./styles";
 import { Avatar, Box, Button, Input } from "@material-ui/core";
+import { toast } from "react-toastify";
 import RewardModal from "../RewardModal";
+import { Close } from "@material-ui/icons";
 
 const RewardScreen: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
+  const [displayReward, setDisplayReward] = useState(true);
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
 
     setInputValue("");
+    toast.success("Your message has been successfully sent to John.");
+  }, []);
+
+  const handleCloseRewardScreen = useCallback(() => {
+    setDisplayReward(false);
   }, []);
 
   return (
-    <Container>
+    <Container displayReward={displayReward}>
       <Box className="content">
         <Avatar
           className="avatar"
@@ -31,6 +39,7 @@ const RewardScreen: React.FC = () => {
         </Box>
         <RewardModal />
 
+        <Close className="close-button" onClick={handleCloseRewardScreen} />
         <form onSubmit={handleSubmit}>
           <Input
             className="input"

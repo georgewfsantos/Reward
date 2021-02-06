@@ -1,13 +1,15 @@
 import React from "react";
-import RewardScreen from "./components/RewardScreen";
-
+import { ToastContainer } from "react-toastify";
 import GlobalStyle from "../src/styles/global";
+
+import RewardDashboard from "./pages/RewardDashboard";
 
 const App: React.FC = () => {
   return (
     <>
-      <RewardScreen />
       <GlobalStyle />
+      <RewardDashboard />
+      <ToastContainer autoClose={10000} />
     </>
   );
 };
