@@ -17,6 +17,15 @@ export const ContentWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 830px) {
+    width: 400px;
+
+    h1 {
+      max-width: 250px;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
 
   .reward-content {
     display: flex;
@@ -27,6 +36,9 @@ export const ContentWrapper = styled.div`
     align-items: center;
     background-color: #f5f5f5;
     border-radius: 8px;
+    @media (max-width: 830px) {
+      height: 280px;
+    }
 
     > h1 {
       border-radius: 7px;

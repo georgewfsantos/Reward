@@ -26,6 +26,18 @@ export const Container = styled.div<ContentProps>`
     padding: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
+    @media (max-width: 830px) {
+      width: 400px;
+    }
+
+    .modal-button {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
 
     .avatar {
       width: 80px;
@@ -61,11 +73,11 @@ export const Container = styled.div<ContentProps>`
       }
     }
 
-    svg {
+    .close-button {
       position: absolute;
       cursor: pointer;
 
-      top: 2%;
+      top: 1.5%;
       right: 1%;
     }
 

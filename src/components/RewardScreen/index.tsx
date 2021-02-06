@@ -3,7 +3,7 @@ import { Container } from "./styles";
 import { Avatar, Box, Button, Input } from "@material-ui/core";
 import { toast } from "react-toastify";
 import RewardModal from "../RewardModal";
-import { Close } from "@material-ui/icons";
+import { Close, Public } from "@material-ui/icons";
 
 const RewardScreen: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
@@ -37,8 +37,10 @@ const RewardScreen: React.FC = () => {
             <span>02/04/2021</span>
           </p>
         </Box>
-        <RewardModal />
-
+        <div className="modal-button">
+          <Public color="primary" />
+          <RewardModal />
+        </div>
         <Close className="close-button" onClick={handleCloseRewardScreen} />
         <form onSubmit={handleSubmit}>
           <Input
