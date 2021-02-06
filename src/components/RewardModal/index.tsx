@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "@material-ui/core/Modal";
 import { Avatar, Box, Button } from "@material-ui/core";
 
-import { Container, ContentWrapper } from "./styles";
+import { ContentWrapper } from "./styles";
 
 const RewardModal: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -16,7 +16,7 @@ const RewardModal: React.FC = () => {
   };
 
   return (
-    <Container>
+    <>
       <Button
         className="reward-button"
         variant="contained"
@@ -25,9 +25,9 @@ const RewardModal: React.FC = () => {
       >
         You have a reward
       </Button>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={handleClose} className="modal">
         <ContentWrapper>
-          <h1>Reward name</h1>
+          <h1>A one-hundred-dollar gift card</h1>
           <Avatar
             className="reward-image"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCmZ9P9Wd3gGAittctdRYD5ghsoYQmUmB8-g&usqp=CAU"
@@ -38,13 +38,13 @@ const RewardModal: React.FC = () => {
             <Button variant="contained" color="primary">
               Accept
             </Button>
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="secondary" onClick={handleClose}>
               Decline
             </Button>
           </Box>
         </ContentWrapper>
       </Modal>
-    </Container>
+    </>
   );
 };
 

@@ -8,8 +8,9 @@ export default createGlobalStyle`
     outline: 0;
   }
     
-    body {
+    body, input {
       -webkit-font-smoothing: antialiased;
+      font-family: Roboto;
     } 
     
     

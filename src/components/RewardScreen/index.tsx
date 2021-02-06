@@ -1,9 +1,17 @@
-import React from "react";
+import React, { FormEvent, useCallback, useState } from "react";
 import { Container } from "./styles";
-import { Avatar, Box } from "@material-ui/core";
+import { Avatar, Box, Button, Input } from "@material-ui/core";
 import RewardModal from "../RewardModal";
 
 const RewardScreen: React.FC = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = useCallback((e: FormEvent) => {
+    e.preventDefault();
+
+    setInputValue("");
+  }, []);
+
   return (
     <Container>
       <Box className="content">
@@ -13,10 +21,30 @@ const RewardScreen: React.FC = () => {
           alt="Avatar"
         />
         <Box className="reward-info">
-          <p>John Doe says: </p>
-          <p>You have worked hard last week and we've decided to reward you.</p>
+          <p>
+            <span>John Doe</span> says:{" "}
+          </p>
+          <p>"We'd like to reward you for your hard work."</p>
+          <p>
+            <span>02/04/2021</span>
+          </p>
         </Box>
         <RewardModal />
+
+        <form onSubmit={handleSubmit}>
+          <Input
+            className="input"
+            multiline
+            placeholder="Reply to the sender here"
+            rowsMax="2"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            inputProps={{ style: { textAlign: "center" } }}
+          />
+          <Button color="secondary" variant="contained" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </form>
       </Box>
     </Container>
   );
